@@ -22,7 +22,8 @@ jobs:
         else
           echo ::set-output name=version::snapshot
         fi
-        echo ::set-output name=builddate::date '+%Y%m%d%H%M%S'
+        builddate=`date '+%Y%m%d%H%M%S'`
+        echo ::set-output name=builddate::$builddate
     - name: Environment
       run: |
         echo git_ref=$GITHUB_REF
